@@ -21,7 +21,9 @@ default['opsworks_java']['jvm_pkg']['java_home_basedir'] = '/usr/local'
 default['opsworks_java']['datasources'] = {}
 
 default['opsworks_java']['tomcat']['base_version'] = node['opsworks_java']['java_app_server_version'].to_i
+default['opsworks_java']['tomcat']['old_version'] = '7.0'
 default['opsworks_java']['tomcat']['service_name'] = "tomcat#{node['opsworks_java']['tomcat']['base_version']}"
+default['opsworks_java']['tomcat']['old_service_name'] = "tomcat#{node['opsworks_java']['tomcat']['old_version']}"
 default['opsworks_java']['tomcat']['port'] = 8080
 default['opsworks_java']['tomcat']['secure_port'] = 8443
 default['opsworks_java']['tomcat']['ajp_port'] = 8009
