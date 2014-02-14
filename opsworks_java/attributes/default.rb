@@ -4,7 +4,7 @@ default['opsworks_java']['jvm'] = 'openjdk'
 default['opsworks_java']['jvm_version'] = '7'
 default['opsworks_java']['jvm_options'] = ''
 default['opsworks_java']['java_app_server'] = 'tomcat'
-default['opsworks_java']['java_app_server_version'] = '7.0'
+default['opsworks_java']['java_app_server_version'] = '6.0'
 
 default['opsworks_java']['jvm_pkg'] = {}
 default['opsworks_java']['jvm_pkg']['use_custom_pkg_location'] = false
