@@ -6,7 +6,18 @@ node[:deploy].each do |application, deploy|
     next
   end
 
-  include_recipe "opsworks_java::#{node['opsworks_java']['java_app_server']}_service"
+  service 'tomcat' do
+  service_name node['opsworks_java']['tomcat']['old_service_name']
+
+  case node[:platform_family]
+  when 'debian'
+    supports :restart => true, :reload => false, :status => true
+  when 'rhel'
+    supports :restart => true, :reload => true, :status => true
+  end
+
+  action :nothing
+  end
   
   execute "trigger #{node['opsworks_java']['java_app_server']} service stop" do
     command '/bin/true'
